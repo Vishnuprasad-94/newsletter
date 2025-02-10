@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --tomato: hsl(4, 100%, 67%);
+    --dark-slate-grey: hsl(234, 29%, 20%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto';
+}
+/*body*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: grey;
+}
+/*main-container*/
+
+.main-container {
+    display: flex;
+
+
+    background-color: rgb(255, 255, 255);
+
+    padding: 1.25rem;
+    border-radius: 25px;
+
+    gap: 2.5rem;
+
+    width: 52rem;
+    height: 34rem;
+}
+
+
+/*info-container*/
+
+.info-container {
+    font-size: 1rem;
+    
+   
+    padding-left: 2rem;
+    color: var(--grey);
+   
+}
+
+.info-container h1 {
+    font-size: 3.5rem;
+    color: var(--dark-slate-grey);
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/*list*/
+
+.info-container ul {
+    margin-top: 1rem;
+}
+
+.info-container li {
+    list-style: none;
+    margin-bottom: 0.75rem;
+    
+}
+
+.info-container li span {
+    margin-right: 0.5rem;
+}
+
+.info-container li span img {
+    width: 0.85rem;
+}
+
+/*form*/
+
+/*upper labels*/
+
+.labels {
+    font-size: 0.85rem;
+    font-weight: 550;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+    margin-top: 1.5rem;
+    color: var(--dark-slate-grey);
+}
+
+
+.labels p {
+    margin-right: 1.25rem;
+}
+
+
+
+
+/* lower labels and inputs*/
+
+.inputBox{
+    display: flex;
+    width: 95%;
+    height: 2.65rem;
+    margin-bottom: 0.75rem;
+    border-radius: 5px;
+    overflow: hidden;
+    
+   
+}
+
+label  {
+    width: 13%;
+    height: 100%;
+    background-color:var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--grey);
+    border-radius: 5px 0 0 5px;
+      
+}
+
+label:hover {
+    border: 2px solid rgb(30, 30, 35);
+    border-right:1px solid var(--grey);
+   
+}
+
+label svg {
+    width: 62%;
+    fill: var(--grey);
+}
+
+
+
+input {
+    width: 87%;
+    height: 100%;
+    border-radius: 0px 5px 5px 0px;
+    padding: 0.25rem 0.25rem 0.25rem 1rem;
+    font-size: 1rem;
+    color: black;
+    letter-spacing: 0.095rem;
+    border: 1px solid var(--grey);
+    border-left: none;
+    
+}
+input:hover, input:focus {
+    outline: none;
+    border: 2px solid var(--dark-slate-grey);
+    border-left: none;
+}
+
+div:has(input:hover) > label, div:has(input:focus) > label {
+    border: 2px solid var(--dark-slate-grey);
+    border-right:1px solid var(--grey);
+}
+
+div:has(input:hover) > label svg, div:has(input:focus) > label svg  {
+   fill: var(--dark-slate-grey);
+}
+
+
+
+
+
+
+/*error messages*/
+
+/*for labels*/
+
+.labels > :nth-child(2) {
+    visibility: hidden;
+}
+
+.labels.show > :nth-child(2) {
+    color: red;
+    visibility: visible;
+}
+
+/*for inputs*/
+
+.inputBox.show > label, .inputBox.show > input  {
+    background-color: rgba(255, 99, 71, 0.232);
+    color: red;
+  
+    border-color: red;
+
+}
+
+.inputBox.show > label svg {
+    fill: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button {
+    width: 95%;
+    height: 3rem;
+    background: var(--dark-slate-grey);
+    color: var(--white);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 1.25rem;
+    font-size: 1rem;
+    font-weight: 550;
+    letter-spacing: 0.095rem;
+    
+
+
+}
+
+
+button:hover {
+    background: linear-gradient(to right, var(--tomato), orange);
+    
+}
+
+
+
+/*media-query*/
+
+@media screen and (max-width: 933px) {
+
+    img#banner {
+        content: url(./assets/images/illustration-sign-up-mobile.svg);
+        
+    }
+
+    .main-container {
+        flex-direction: column-reverse;
+        height: auto;
+        max-width: 464px;
+        min-width: 375px;
+
+        display: flex;
+
+
+   
+
+      padding: 0rem;
+      border-radius: 0px;
+
+      gap: 1.5rem;
+
+      height: auto;
+}
+
+    .info-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-bottom: 2.5rem;
+}
+
+.info-container h1 {
+    font-size: 3rem ;
+}
+
+.inputBox {
+   
+    width: 100%;   
+   
+}
+
+.labels p {
+    margin-right: 0;
+}
+
+button {
+    width: 100%;
+}
+
+    
+}
